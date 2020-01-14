@@ -221,6 +221,18 @@ export default class Home extends Component {
             onClick={() => this.setState({checkbox: !this.state.checkbox})}
             tintColor={constants.Colors.Primary}
           />
+          <Button
+            title={'Post'}
+            style={{
+              backgroundColor: constants.Colors.Primary,
+              // padding: Scale.moderateScale(25),
+            }}
+            textStyle={{
+              color: constants.Colors.White,
+              fontSize: Scale.moderateScale(20),
+              fontWeight: 'bold',
+            }}
+          />
         </Card>
       </ScrollView>
     );

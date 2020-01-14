@@ -48,7 +48,7 @@ CheckboxComponent.propTypes = {
   isChecked: PropTypes.bool,
   disabled: PropTypes.bool,
   title: PropTypes.string,
-  textStyle: Text.propTypes.style,
+  textStyle: ViewPropTypes.style,
 };
 CheckboxComponent.defaultProps = {
   style: {},
