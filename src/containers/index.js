@@ -351,32 +351,35 @@ export default class Home extends Component {
             title="Choose Buddies"
             icon={'hand-o-up'}
           />
-          <Checkbox
-            title={'Share Mobile Number with Buddies'}
-            isChecked={this.state.checkbox}
-            onClick={() => this.setState({checkbox: !this.state.checkbox})}
-            tintColor={constants.Colors.Primary}
-          />
-          <TextView
-            value="Note:All contacted buddies may not respond to your post"
-            fontSize={12}
-            textStyle={{alignSelf: 'center', color: constants.Colors.Dark}}
-          />
-          <Button
-            title={'Post'}
-            style={{
-              backgroundColor: constants.Colors.Primary,
-              borderRadius: 10,
-            }}
-            textStyle={{
-              color: constants.Colors.White,
-              fontSize: Scale.moderateScale(22),
-              fontWeight: 'bold',
-              bottom: 5,
-            }}
-          />
-          <View style={{height: 10, width: '100%'}}></View>
         </Card>
+        <Checkbox
+          title={'Share Mobile Number with Buddies'}
+          isChecked={this.state.checkbox}
+          onClick={() => this.setState({checkbox: !this.state.checkbox})}
+          tintColor={constants.Colors.Primary}
+        />
+        <TextView
+          value="Note:All contacted buddies may not respond to your post"
+          fontSize={12}
+          textStyle={{alignSelf: 'center', color: constants.Colors.Dark}}
+        />
+        <Button
+          title={'Post'}
+          style={{
+            backgroundColor: constants.Colors.Primary,
+            borderRadius: 10,
+            width: '90%',
+            alignSelf: 'center',
+            top: 5,
+          }}
+          textStyle={{
+            color: constants.Colors.White,
+            fontSize: Scale.moderateScale(22),
+            fontWeight: 'bold',
+            bottom: 5,
+          }}
+        />
+        <View style={{height: 20, width: '100%'}}></View>
       </ScrollView>
     );
   }
