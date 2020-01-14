@@ -342,6 +342,7 @@ export default class Home extends Component {
             title="Choose Buddies"
             icon={'hand-o-up'}
           />
+          </Card>
           <Checkbox
             title={'Share Mobile Number with Buddies'}
             isChecked={this.state.checkbox}
@@ -354,6 +355,9 @@ export default class Home extends Component {
             style={{
               backgroundColor: constants.Colors.Primary,
               borderRadius: 10,
+              width: "90%",
+              alignSelf: "center",
+              top: 5,
             }}
             textStyle={{
               color: constants.Colors.White,
@@ -363,7 +367,6 @@ export default class Home extends Component {
             }}
           />
           <View style={{height: 20, width: '100%'}}></View>
-        </Card>
       </ScrollView>
     );
   }
