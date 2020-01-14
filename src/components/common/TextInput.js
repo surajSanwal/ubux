@@ -15,16 +15,19 @@ const TextInputComponent = props => {
         props.style,
       ]}>
       <View
-        style={{
+        style={[
+          {
           borderWidth: Scale.moderateScale(1),
-          borderColor: constants.Colors.Background,
+          borderColor: constants.Colors.Dark,
           borderRadius: Scale.moderateScale(10),
           padding: Scale.moderateScale(10),
           margin: Scale.moderateScale(5),
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
-        }}>
+        },
+        props.style
+        ]}>
         <View
           style={{
             flexDirection: 'row',
@@ -35,7 +38,7 @@ const TextInputComponent = props => {
             <Icon
               name={props.icon}
               size={Scale.moderateScale(15)}
-              color={constants.Colors.Background}
+              color={constants.Colors.Dark}
               style={{marginRight: Scale.moderateScale(5)}}
             />
           )}
@@ -51,7 +54,7 @@ const TextInputComponent = props => {
               },
               props.inputStyle,
             ]}
-            placeholderTextColor={constants.Colors.Background}
+            placeholderTextColor={constants.Colors.Dark}
             onChangeText={props.onChangeText}
           />
         </View>
@@ -69,8 +72,8 @@ const TextInputComponent = props => {
           numberOfLines={1}
           style={{
             paddingHorizontal: Scale.moderateScale(5),
-            fontSize: Scale.moderateScale(9.5),
-            color: constants.Colors.Background,
+            fontSize: Scale.moderateScale(10.5),
+            color: constants.Colors.Dark,
             ...constants.Fonts.HeeboMedium,
           }}>
           {props.example}
