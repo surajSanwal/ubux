@@ -313,7 +313,8 @@ export default class Home extends Component {
                 <View style={{marginHorizontal: Scale.moderateScale(5)}}>
                   <Button
                     title={item.value}
-                    style={{width: Scale.moderateScale(100)}}
+                    style={{width: Scale.moderateScale(100), backgroundColor: item.id === 0 ? constants.Colors.Primary : "white"}}
+                    textStyle={{color: item.id === 0 ? "white" : constants.Colors.Primary}}
                   />
                   <View
                     style={{
@@ -324,7 +325,7 @@ export default class Home extends Component {
                       style={{
                         ...constants.Fonts.HeeboRegular,
                         fontSize: Scale.moderateScale(10),
-                        color: constants.Colors.Primary,
+                        color: item.id === 0 ? "white" : constants.Colors.Primary,
                       }}>
                       {item.cost}
                     </Text>
@@ -336,7 +337,7 @@ export default class Home extends Component {
           <Button
             style={{
               margin: Scale.moderateScale(20),
-              marginHorizontal: Scale.moderateScale(60),
+              marginHorizontal: Scale.moderateScale(80),
             }}
             title="Choose Buddies"
             icon={'hand-o-up'}
@@ -347,16 +348,18 @@ export default class Home extends Component {
             onClick={() => this.setState({checkbox: !this.state.checkbox})}
             tintColor={constants.Colors.Primary}
           />
+           <TextView value="Note:All contacted buddies may not respond to your post" fontSize={12} textStyle={{alignSelf: "center", color: constants.Colors.Dark }}/>
           <Button
             title={'Post'}
             style={{
               backgroundColor: constants.Colors.Primary,
-              // padding: Scale.moderateScale(25),
+              borderRadius: 10,
             }}
             textStyle={{
               color: constants.Colors.White,
-              fontSize: Scale.moderateScale(20),
+              fontSize: Scale.moderateScale(22),
               fontWeight: 'bold',
+              bottom: 5,
             }}
           />
           <View style={{height: 20, width: '100%'}}></View>
