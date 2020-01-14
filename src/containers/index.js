@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {View, FlatList, Image, ScrollView, Text} from 'react-native';
+import React, { Component } from 'react';
+import { View, FlatList, Image, ScrollView, Text } from 'react-native';
 import constants from '../constants';
 import Scale from '../helpers/Scale';
 import Card from '../components/common/Card';
@@ -23,13 +23,13 @@ export default class Home extends Component {
       <ScrollView
         keyboardDismissMode="interactive"
         keyboardShouldPersistTaps="handled"
-        style={{backgroundColor: constants.Colors.Background, flex: 1}}>
-        <Card style={{top: Scale.moderateScale(10)}}>
-          <View style={{paddingBottom: Scale.moderateScale(20)}}>
-            <TextView value="Location" />
+        style={{ backgroundColor: constants.Colors.Background, flex: 1 }}>
+        <Card style={{ top: Scale.moderateScale(10) }}>
+          <View style={{ paddingBottom: Scale.moderateScale(20), marginLeft: Scale.moderateScale(10), }}>
+            <TextView value="Location" fontSize={18} />
             <View
               style={{
-                marginLeft: Scale.moderateScale(15),
+                marginLeft: Scale.moderateScale(5),
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -38,17 +38,37 @@ export default class Home extends Component {
                 name="location-pin"
                 size={Scale.moderateScale(20)}
                 color={constants.Colors.Primary}
+
               />
               <TextView
                 value="No. 72, Third Cross Street, Ayanavaram, Chennai - 600023 T.."
                 fontSize={12}
               />
             </View>
+            <View style={{ height: Scale.moderateScale(30), top: Scale.moderateScale(10), width: "90%", alignSelf: "center", flexDirection: "row", justifyContent: "space-between" }}>
+              <TextView value="Radius" fontSize={18} />
+              <View style={{ width: "60%" }} />
+              <TextView value="5km" fontSize={18} />
+              <View style={{ height: Scale.moderateScale(20), width: "5%", alignSelf: "center", alignItems: "center" }}>
+                <Entypo
+                  name="triangle-down"
+                  size={Scale.moderateScale(20)}
+                  color={constants.Colors.Dark}
+                />
+              </View>
+            </View>
           </View>
         </Card>
-        <Card style={{paddingVertical: Scale.moderateScale(30)}}>
-          <View>
-            <TextView value={'I need a..'} />
+        <Card style={{ top: Scale.moderateScale(10) }}>
+          <View style={{ marginLeft: Scale.moderateScale(10) }}>
+            <View style={{ height: Scale.moderateScale(30), width: "100%", flexDirection: "row", justifyContent: "space-between" }}>
+              <TextView value={'I need a..'} fontSize={18} />
+              <Entypo
+                name="lab-flask"
+                size={Scale.moderateScale(20)}
+                color={constants.Colors.Dark}
+              />
+            </View>
             <TextInput
               icon="search"
               placeholder={'Search Profession / Keyword'}
@@ -56,8 +76,8 @@ export default class Home extends Component {
                 'Astrologer, Dentist, Lawyer, Mechanic, Plumber, Tailor, Tarot Reader etc.'
               }
               value={this.state.keyword}
-              onChangeText={keyword => this.setState({keyword})}
-              onClear={() => this.setState({keyword: ''})}
+              onChangeText={keyword => this.setState({ keyword })}
+              onClear={() => this.setState({ keyword: '' })}
             />
           </View>
           <View>
@@ -65,29 +85,33 @@ export default class Home extends Component {
               style={{
                 flexDirection: 'row',
                 justifyContent: 'flex-end',
-                right: Scale.moderateScale(20),
+                right: Scale.moderateScale(30),
+                top: Scale.moderateScale(10),
               }}>
               <TextView value={20} />
               <TextView
-                style={{marginLeft: 5}}
+                fontSize={14}
+                style={{ marginLeft: 5 }}
                 value={'Android Developers available in 5 km..'}
               />
             </View>
             <View
               style={{
+                top: Scale.moderateScale(10),
                 flexDirection: 'row',
                 justifyContent: 'space-between',
                 alignItems: 'center',
+                marginLeft: Scale.moderateScale(15),
                 marginHorizontal: Scale.moderateScale(15),
               }}>
               <FlatList
-                style={{maxWidth: '75%'}}
+                style={{ maxWidth: '75%' }}
                 keyExtractor={() => Math.random().toString()}
                 data={new Array(20)}
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
-                renderItem={({item, index}) => (
+                renderItem={({ item, index }) => (
                   <View
                     key={index}
                     style={{
@@ -106,30 +130,37 @@ export default class Home extends Component {
                   </View>
                 )}
               />
-              <Button title={'View All'} />
+              <Button style={{ width: Scale.moderateScale(80), marginLeft: Scale.moderateScale(5) }} title={'View All'} />
             </View>
           </View>
+          <View style={{ height: 30, width: "100%", backgroundColor: "White" }}></View>
         </Card>
         <Card>
           <View>
-            <TextView value="When?" />
-            <TextView
-              value={moment().format('MMM DD, HH:MM A')}
-              fontSize={12}
-            />
+            <TextView value="When?" fontSize={18} />
+            <View style={{ height: Scale.moderateScale(30), width: "75%", flexDirection: "row", justifyContent: "space-between" }}>
+              <TextView value="Now.." fontSize={13} />
+              <TextView
+                value={moment().format('MMM DD, HH:MM A')}
+                fontSize={13}
+              />
+              <TextView value=" " fontSize={13} />
+              <TextView value="Oct 5, 11:30 P.M." fontSize={13} />
+            </View>
             <View
               style={{
                 flexDirection: 'row',
-                justifyContent: 'space-evenly',
+                justifyContent: 'space-between',
                 alignItems: 'center',
+                width: "95%"
               }}>
-              <Button title={'Now'} icon={'clock-o'} />
-              <Button title={'Select & Time'} icon={'clock-o'} />
+              <Button style={{ width: Scale.moderateScale(120), marginLeft: Scale.moderateScale(5) }} title={'Now'} icon={'clock-o'} />
+              <Button style={{ width: Scale.moderateScale(170), marginLeft: Scale.moderateScale(5), }} title={'Set date & Time'} icon={'clock-o'} />
             </View>
           </View>
         </Card>
         <Card>
-          <TextView value="What's your budget?" />
+          <TextView value="What's your budget?" fontSize={18} />
           <View
             style={{
               flexDirection: 'row',
@@ -138,53 +169,77 @@ export default class Home extends Component {
             }}>
             <View
               style={{
-                width: '75%',
+                width: '70%',
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
                 alignItems: 'center',
+                top: 5,
+                height: Scale.moderateScale(50),
               }}>
               <TextInput
-                style={{width: '70%'}}
+                style={{
+                   width: '80%', 
+                   right: 4, 
+                   height: Scale.moderateScale(39),
+                   borderBottomWidth : Scale.moderateScale(1),
+                   borderLeftWidth: Scale.moderateScale(1),
+                   borderColor: constants.Colors.Dark,
+                   borderRadius: Scale.moderateScale(5),
+                   top: -4,
+                  }}
                 placeholder={'Enter a budget'}
                 value={this.state.budget}
-                onChangeText={budget => this.setState({budget})}
-                onClear={() => this.setState({keyword: ''})}
+                onChangeText={budget => this.setState({ budget })}
+                onClear={() => this.setState({ keyword: '' })}
               />
-              <DropdownView label="INR" data={[{key: 'IN', value: 'INR'}]} />
+              <View style={{
+                top: -3, right: 47, height: Scale.moderateScale(38), width: Scale.moderateScale(53), borderWidth: Scale.moderateScale(1), alignSelf: "center", alignItems: "center", borderBottomWidth: Scale.moderateScale(2),
+                borderColor: constants.Colors.Dark,borderTopRightRadius: Scale.moderateScale(5),borderBottomRightRadius: Scale.moderateScale(5)
+              }}>
+                <DropdownView label="INR" data={[{ key: 'IN', value: 'INR' }]} style={{left: 3,alignSelf: "center",width: 50, top: -12}} />
+              </View>
             </View>
             <Button
               title={'No Idea'}
-              textStyle={{color: constants.Colors.White}}
-              style={{backgroundColor: constants.Colors.Primary}}
+              textStyle={{ color: constants.Colors.White }}
+              style={{ backgroundColor: constants.Colors.Primary, width: Scale.moderateScale(100) }}
             />
           </View>
         </Card>
         <Card>
-          <TextView value="Briefly explain requirement" />
+          <View style={{flexDirection: "row", justifyContent: "space-between"}}>
+          <TextView value="Briefly explain requirement" fontSize={18} />
+          <Entypo
+                name="lab-flask"
+                size={Scale.moderateScale(20)}
+                color={constants.Colors.Primary}
+              />
+          </View>
           <TextInput
             placeholder={'Enter a message'}
             multiline
             value={this.state.message}
-            onChangeText={budget => this.setState({budget})}
-            onClear={() => this.setState({message: ''})}
+            onChangeText={budget => this.setState({ budget })}
+            onClear={() => this.setState({ message: '' })}
           />
         </Card>
         <Card>
-          <TextView value="How many buddies to connect?" />
+          <TextView value="How many buddies to connect?" fontSize={18}/>
           <FlatList
+            style={{top: 10}}
             scrollEnabled={false}
             horizontal
             data={[
-              {id: 0, value: '0-12', cost: 'free'},
-              {id: 1, value: '12-20', cost: '$50'},
-              {id: 2, value: '20-30', cost: '$1'},
+              { id: 0, value: '0-12', cost: 'free' },
+              { id: 1, value: '12-20', cost: '$50' },
+              { id: 2, value: '20-30', cost: '$1' },
             ]}
-            renderItem={({item}) => {
+            renderItem={({ item }) => {
               return (
-                <View style={{marginHorizontal: Scale.moderateScale(20)}}>
+                <View style={{ marginHorizontal: Scale.moderateScale(5) }}>
                   <Button
                     title={item.value}
-                    style={{width: Scale.moderateScale(80)}}
+                    style={{ width: Scale.moderateScale(100) }}
                   />
                   <View
                     style={{
@@ -204,6 +259,7 @@ export default class Home extends Component {
               );
             }}
           />
+          <View style={{height: 20, width: "100%"}}></View>
         </Card>
       </ScrollView>
     );

@@ -12,7 +12,7 @@ const Card = props => {
           backgroundColor: constants.Colors.White,
           margin: moderateScale(10),
           padding: moderateScale(10),
-          borderRadius: moderateScale(10),
+          borderRadius: moderateScale(15),
         },
         props.style,
       ]}>

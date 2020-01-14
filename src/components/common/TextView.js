@@ -21,7 +21,6 @@ const TextView = props => {
     </View>
   );
 };
-
 TextView.propTypes = {
   style: ViewPropTypes.style,
   children: React.Children,
