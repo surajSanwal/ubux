@@ -315,8 +315,14 @@ export default class Home extends Component {
                 <View style={{marginHorizontal: Scale.moderateScale(5)}}>
                   <Button
                     title={item.value}
-                    style={{width: Scale.moderateScale(100), backgroundColor: item.id === 0 ? constants.Colors.Primary : "white"}}
-                    textStyle={{color: item.id === 0 ? "white" : constants.Colors.Primary}}
+                    style={{
+                      width: Scale.moderateScale(100),
+                      backgroundColor:
+                        item.id === 0 ? constants.Colors.Primary : 'white',
+                    }}
+                    textStyle={{
+                      color: item.id === 0 ? 'white' : constants.Colors.Primary,
+                    }}
                   />
                   <View
                     style={{
@@ -327,7 +333,8 @@ export default class Home extends Component {
                       style={{
                         ...constants.Fonts.HeeboRegular,
                         fontSize: Scale.moderateScale(10),
-                        color: item.id === 0 ? "white" : constants.Colors.Primary,
+                        color:
+                          item.id === 0 ? 'white' : constants.Colors.Primary,
                       }}>
                       {item.cost}
                     </Text>
@@ -350,7 +357,11 @@ export default class Home extends Component {
             onClick={() => this.setState({checkbox: !this.state.checkbox})}
             tintColor={constants.Colors.Primary}
           />
-           <TextView value="Note:All contacted buddies may not respond to your post" fontSize={12} textStyle={{alignSelf: "center", color: constants.Colors.Dark }}/>
+          <TextView
+            value="Note:All contacted buddies may not respond to your post"
+            fontSize={12}
+            textStyle={{alignSelf: 'center', color: constants.Colors.Dark}}
+          />
           <Button
             title={'Post'}
             style={{
@@ -364,7 +375,7 @@ export default class Home extends Component {
               bottom: 5,
             }}
           />
-          <View style={{height: 20, width: '100%'}}></View>
+          <View style={{height: 10, width: '100%'}}></View>
         </Card>
       </ScrollView>
     );

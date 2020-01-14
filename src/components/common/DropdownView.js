@@ -27,8 +27,8 @@ const DropdownView = props => {
         pickerStyle={{
           backgroundColor: constants.Colors.White,
           marginTop: Scale.moderateScale(40),
-          width: '15%',
-          left: Scale.moderateScale(constants.BaseStyle.DEVICE_WIDTH * 0.53),
+          width: '14%',
+          left: Scale.moderateScale(constants.BaseStyle.DEVICE_WIDTH * 0.4),
         }}
         overlayStyle={{}}
         itemTextStyle={{color: constants.Colors.Black}}
