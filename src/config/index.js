@@ -38,11 +38,14 @@ export const root = () => {
                       color: constants.Colors.Primary,
                     },
                     title: {
-                      text: 'Professionals',
-                      alignment: 'center',
-                      fontSize: Scale.moderateScale(20),
-                      ...constants.Fonts.LeagueSpartanBold,
-                      color: constants.Colors.Primary,
+                      component: {
+                        name: 'topBar',
+                        alignment: 'center',
+                        passProps: {
+                          title: 'Professionals',
+                          leftIcon: 'user-alt',
+                        },
+                      },
                     },
                   },
                 },
