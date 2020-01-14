@@ -5,12 +5,12 @@ import Scale from '../helpers/Scale';
 import Card from '../components/common/Card';
 import TextView from '../components/common/TextView';
 import Entypo from 'react-native-vector-icons/Entypo';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import TextInput from '../components/common/TextInput';
 import Button from '../components/common/Button';
 import moment from 'moment';
 import DropdownView from '../components/common/DropdownView';
 import Checkbox from '../components/common/Checkbox';
-import CheckBox from '@react-native-community/checkbox';
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +24,8 @@ export default class Home extends Component {
   render() {
     return (
       <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
         keyboardDismissMode="interactive"
         keyboardShouldPersistTaps="handled"
         style={{backgroundColor: constants.Colors.Background, flex: 1}}>
@@ -283,8 +285,8 @@ export default class Home extends Component {
         <Card>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <TextView value="Briefly explain requirement" fontSize={18} />
-            <Entypo
-              name="lab-flask"
+            <FontAwesome
+              name="microphone"
               size={Scale.moderateScale(20)}
               color={constants.Colors.Primary}
             />
