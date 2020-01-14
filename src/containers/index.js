@@ -9,6 +9,8 @@ import TextInput from '../components/common/TextInput';
 import Button from '../components/common/Button';
 import moment from 'moment';
 import DropdownView from '../components/common/DropdownView';
+import Checkbox from '../components/common/Checkbox';
+import CheckBox from '@react-native-community/checkbox';
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +18,7 @@ export default class Home extends Component {
       keyword: '',
       budget: 0,
       message: '',
+      checkbox: false,
     };
   }
   render() {
@@ -203,6 +206,20 @@ export default class Home extends Component {
                 </View>
               );
             }}
+          />
+          <Button
+            style={{
+              margin: Scale.moderateScale(20),
+              marginHorizontal: Scale.moderateScale(60),
+            }}
+            title="Choose Buddies"
+            icon={'hand-o-up'}
+          />
+          <Checkbox
+            title={'Share Mobile Number with Buddies'}
+            isChecked={this.state.checkbox}
+            onClick={() => this.setState({checkbox: !this.state.checkbox})}
+            tintColor={constants.Colors.Primary}
           />
         </Card>
       </ScrollView>

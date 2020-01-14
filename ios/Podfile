@@ -39,6 +39,8 @@ target 'demo_sri' do
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
 
+  pod 'react-native-checkbox', :path => '../node_modules/@react-native-community/checkbox'
+
   target 'demo_sriTests' do
     inherit! :search_paths
     # Pods for testing
