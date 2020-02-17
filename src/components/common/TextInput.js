@@ -7,26 +7,20 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const TextInputComponent = props => {
   return (
-    <View
-      style={[
-        {
-          margin: Scale.moderateScale(5),
-        },
-        props.style,
-      ]}>
+    <View style={[{}, props.style]}>
       <View
         style={[
           {
-          borderWidth: Scale.moderateScale(1),
-          borderColor: constants.Colors.Dark,
-          borderRadius: Scale.moderateScale(10),
-          padding: Scale.moderateScale(10),
-          margin: Scale.moderateScale(5),
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        },
-        props.style
+            borderWidth: Scale.moderateScale(2),
+            borderColor: constants.Colors.Background,
+            borderRadius: Scale.moderateScale(5),
+            padding: Scale.moderateScale(10),
+            // margin: Scale.moderateScale(5),
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          },
+          props.style,
         ]}>
         <View
           style={{

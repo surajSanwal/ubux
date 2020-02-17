@@ -11,21 +11,20 @@ const Button = props => {
       onPress={props.onPress}
       style={[
         {
-          borderWidth: Scale.moderateScale(0.5),
-          borderTopWidth: Scale.moderateScale(0),
-          borderBottomWidth: Scale.moderateScale(2),
-          borderColor: constants.Colors.Dark,
+          borderWidth: Scale.moderateScale(2),
+          // borderTopWidth: Scale.moderateScale(0),
+          // borderBottomWidth: Scale.moderateScale(2),
+          borderColor: '#e5e5e5',
           padding: Scale.moderateScale(10),
           borderRadius: Scale.moderateScale(5),
           justifyContent: 'center',
           alignItems: 'center',
           shadowColor: constants.Colors.Black,
           shadowOffset: {height: 0, width: 1},
-          shadowOpacity: 0.2,
-          shadowRadius: Scale.moderateScale(8),
+          shadowOpacity: 0.1,
+          shadowRadius: Scale.moderateScale(1),
           flexDirection: 'row',
-          maxHeight: Scale.moderateScale(45),
-          backgroundColor: "white",
+          backgroundColor: 'white',
         },
         props.style,
       ]}>
@@ -42,9 +41,9 @@ const Button = props => {
           {
             ...constants.Fonts.HeeboMedium,
             color: constants.Colors.Primary,
-            fontSize: Scale.moderateScale(12),
-            fontWeight: "500",
-            fontStyle: "normal",
+            fontSize: Scale.moderateScale(14),
+            fontWeight: '500',
+            fontStyle: 'normal',
           },
           props.textStyle,
         ]}>
