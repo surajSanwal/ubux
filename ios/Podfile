@@ -41,20 +41,6 @@ target 'demo_sri' do
 
   pod 'react-native-checkbox', :path => '../node_modules/@react-native-community/checkbox'
 
-  target 'demo_sriTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
   use_native_modules!
-end
-
-target 'demo_sri-tvOS' do
-  # Pods for demo_sri-tvOS
-
-  target 'demo_sri-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
