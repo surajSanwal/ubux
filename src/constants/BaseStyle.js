@@ -3,13 +3,13 @@
  * @description: Base Style for the application
  * */
 
-'use-strict';
+"use-strict";
 
-import {Platform, Dimensions} from 'react-native';
+import {Platform, Dimensions} from "react-native";
 
 // Precalculate Device Dimensions for better performance
-const x = Dimensions.get('window').width;
-const y = Dimensions.get('window').height;
+const x = Dimensions.get("window").width;
+const y = Dimensions.get("window").height;
 
 // Calculating ratio from Phone breakpoints
 const ratioX = x < 375 ? (x < 320 ? 0.75 : 0.875) : 1;
@@ -26,12 +26,12 @@ function em(value) {
   return unit * value;
 }
 const isIphoneX = () => {
-  let d = Dimensions.get('window');
+  let d = Dimensions.get("window");
   const {height, width} = d;
 
   return (
     // This has to be iOS duh
-    Platform.OS === 'ios' &&
+    Platform.OS === "ios" &&
     // Accounting for the height in either orientation
     (height === 812 || width === 812)
   );
@@ -61,9 +61,9 @@ const BaseStyle = {
   CARD_PADDING_Y: em(1.25),
 
   // FONT
-  LITTLE_BOLD: '200',
-  BOLD: '400',
-  BOLDER: '800',
+  LITTLE_BOLD: "200",
+  BOLD: "400",
+  BOLDER: "800",
   FONT_SIZE: em(1),
   FONT_SIZE_SMALLER: em(0.75),
   FONT_SIZE_SMALL: em(0.875),

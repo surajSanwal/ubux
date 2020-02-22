@@ -1,10 +1,10 @@
 /* eslint-disable */
 
-'use strict';
+"use strict";
 
-import Connection from '../config/connection';
-import NetInfo from '@react-native-community/netinfo';
-import querystring from 'querystring';
+import Connection from "../config/connection";
+import NetInfo from "@react-native-community/netinfo";
+import querystring from "querystring";
 
 class RestClient {
   static createFormData = (data = {}) => {
@@ -27,14 +27,14 @@ class RestClient {
     });
   };
   static getURLString = (url, queryParam = {}) => {
-    return url + '?' + querystring.stringify(queryParam);
+    return url + "?" + querystring.stringify(queryParam);
   };
 
   static restCall = (
     url,
     params,
     token = null,
-    type = 'POST',
+    type = "POST",
     isFormData = false,
   ) => {
     return new Promise((resolve, reject) => {
@@ -44,9 +44,9 @@ class RestClient {
             method: type,
             timeout: 1000 * 1 * 60,
             headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-              'Cache-Control': 'no-cache',
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              "Cache-Control": "no-cache",
               Authorization: token,
             },
             body: isFormData
@@ -60,14 +60,14 @@ class RestClient {
             .catch(error => {
               reject({
                 message:
-                  'The server is not reachable right now, sorry for inconvenience.',
+                  "The server is not reachable right now, sorry for inconvenience.",
               });
-              console.warn('eroro', error);
+              console.warn("eroro", error);
             });
         })
         .catch(error => {
           reject({
-            message: 'Please check your internet connectivity.',
+            message: "Please check your internet connectivity.",
           });
         });
     });
@@ -80,15 +80,15 @@ class RestClient {
             Connection.getRestUrl() + url,
             param,
           );
-          console.log('Get Call==>', requestURL);
+          console.log("Get Call==>", requestURL);
 
           fetch(requestURL, {
-            method: 'GET',
+            method: "GET",
             timeout: 1000 * 1 * 60,
             headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-              'Cache-Control': 'no-cache',
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              "Cache-Control": "no-cache",
               Authorization: token,
             },
           })
@@ -99,14 +99,14 @@ class RestClient {
             .catch(error => {
               reject({
                 message:
-                  'The server is not reachable right now, sorry for inconvenience.',
+                  "The server is not reachable right now, sorry for inconvenience.",
               });
-              console.warn('eroro', error);
+              console.warn("eroro", error);
             });
         })
         .catch(error => {
           reject({
-            message: 'Please check your internet connectivity.',
+            message: "Please check your internet connectivity.",
             error,
           });
         });
@@ -117,12 +117,12 @@ class RestClient {
       this.isConnected()
         .then(() => {
           fetch(Connection.getRestUrl() + url, {
-            method: 'Delete',
+            method: "Delete",
             timeout: 1000 * 1 * 60,
             headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-              'Cache-Control': 'no-cache',
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              "Cache-Control": "no-cache",
               Authorization: token,
             },
           })
@@ -133,13 +133,13 @@ class RestClient {
             .catch(error => {
               reject({
                 message:
-                  'The server is not reachable right now, sorry for inconvenience.',
+                  "The server is not reachable right now, sorry for inconvenience.",
               });
             });
         })
         .catch(error => {
           reject({
-            message: 'Please check your internet connectivity.',
+            message: "Please check your internet connectivity.",
           });
         });
     });
@@ -148,7 +148,7 @@ class RestClient {
   static sendForm = (url, params) => {
     return new Promise((resolve, reject) => {
       var body = new FormData();
-      body.append('file', params);
+      body.append("file", params);
       RestClient.restCall(url, body, token)
         .then(res => resolve(res))
         .catch(err => reject(err));

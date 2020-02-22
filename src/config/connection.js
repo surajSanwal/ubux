@@ -9,23 +9,23 @@
 
 const envConfig = {
   development: {
-    frontEnd: 'www.ubux.app',
-    apiServer: 'www.ubux.app',
-    apiPath: 'test',
-    apiVersion: 'v1',
-    chatPath: 'chatHub',
+    frontEnd: "www.ubux.app",
+    apiServer: "www.ubux.app",
+    apiPath: "test",
+    apiVersion: "v1",
+    chatPath: "chatHub",
   },
   production: {
-    frontEnd: 'www.ubux.app',
-    apiServer: 'www.ubux.app',
-    apiPath: 'test',
-    apiVersion: 'v1',
-    chatPath: 'chatHub',
+    frontEnd: "www.ubux.app",
+    apiServer: "www.ubux.app",
+    apiPath: "test",
+    apiVersion: "v1",
+    chatPath: "chatHub",
   },
 };
 
 /* eslint-disable-next-line */
-export const env = envConfig[process.env.NODE_ENV || 'development'];
+export const env = envConfig[process.env.NODE_ENV || "development"];
 // export const env = envConfig["production"];
 export const getEnv = () => {
   /* eslint-disable-next-line */

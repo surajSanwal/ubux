@@ -8,27 +8,27 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'GET_STORE_REQUEST':
+    case "GET_STORE_REQUEST":
       return {...state, loading: true};
-    case 'GET_STORE_SUCCESS':
+    case "GET_STORE_SUCCESS":
       return {...state, stores: action.payload, loading: false};
-    case 'GET_STORE_FAIL':
+    case "GET_STORE_FAIL":
       return {...state, loading: false};
-    case 'GET_STORE_DETAIL_REQUEST':
+    case "GET_STORE_DETAIL_REQUEST":
       return {...state, loading: true};
-    case 'GET_STORE_DETAIL_FAIL':
+    case "GET_STORE_DETAIL_FAIL":
       return {...state, loading: false};
-    case 'GET_STORE_DETAIL_SUCCESS':
+    case "GET_STORE_DETAIL_SUCCESS":
       return {...state, loading: false, details: action.payload};
-    case 'GET_STORE_PRODUCT_REQUEST':
+    case "GET_STORE_PRODUCT_REQUEST":
       return {...state, loading: true};
-    case 'GET_STORE_PRODUCT_SUCCESS':
+    case "GET_STORE_PRODUCT_SUCCESS":
       return {
         ...state,
         loading: false,
         details: {...state.details, products: action.payload},
       };
-    case 'GET_STORE_PRODUCT_FAIL':
+    case "GET_STORE_PRODUCT_FAIL":
       return {...state, loading: false};
     default:
       return {...state};

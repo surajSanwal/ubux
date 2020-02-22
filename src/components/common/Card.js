@@ -1,24 +1,19 @@
-import React from 'react';
-import {View, Text, ViewPropTypes} from 'react-native';
-import constants from '../../constants';
-import PropTypes from 'prop-types';
-import {moderateScale} from '../../helpers/Scale';
+import React from "react";
+import {View, ViewPropTypes, StyleSheet} from "react-native";
+import constants from "../../constants";
+import {moderateScale} from "../../helpers/Scale";
 
 const Card = props => {
-  return (
-    <View
-      style={[
-        {
-          backgroundColor: constants.Colors.White,
-          padding: moderateScale(15),
-          borderRadius: moderateScale(8),
-        },
-        props.style,
-      ]}>
-      {props.children}
-    </View>
-  );
+  return <View style={[styles.container, props.style]}>{props.children}</View>;
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: constants.Colors.White,
+    padding: moderateScale(15),
+    borderRadius: moderateScale(8),
+  },
+});
 
 Card.propTypes = {
   style: ViewPropTypes.style,

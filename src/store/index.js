@@ -1,14 +1,14 @@
-import {createStore, applyMiddleware} from 'redux';
-import {persistCombineReducers, persistStore} from 'redux-persist';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import AsyncStorage from '@react-native-community/async-storage';
-import reducers from '../reducers';
+import {createStore, applyMiddleware} from "redux";
+import {persistCombineReducers, persistStore} from "redux-persist";
+import logger from "redux-logger";
+import thunk from "redux-thunk";
+import AsyncStorage from "@react-native-community/async-storage";
+import reducers from "../reducers";
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage: AsyncStorage,
   blacklist: [],
-  whitelist: ['user'],
+  whitelist: ["user"],
 };
 export default () => {
   return new Promise((resolve, reject) => {

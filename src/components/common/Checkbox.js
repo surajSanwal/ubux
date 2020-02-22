@@ -1,23 +1,14 @@
-import React from 'react';
-import {View, Text, ViewPropTypes} from 'react-native';
-import CheckBox from 'react-native-check-box';
-import PropTypes from 'prop-types';
-import Scale from '../../helpers/Scale';
-import constants from '../../constants';
+import React from "react";
+import {View, Text, ViewPropTypes, StyleSheet} from "react-native";
+import CheckBox from "react-native-check-box";
+import PropTypes from "prop-types";
+import Scale from "../../helpers/Scale";
+import constants from "../../constants";
 const CheckboxComponent = props => {
   return (
-    <View
-      style={[
-        {
-          //   backgroundColor: 'red',
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-        },
-        props.style,
-      ]}>
+    <View style={[styles.container, props.style]}>
       <CheckBox
-        style={{padding: Scale.moderateScale(5)}}
+        style={styles.checkBox}
         testID={props.testID}
         checkBoxColor={props.tintColor}
         onClick={props.onClick}
@@ -26,20 +17,24 @@ const CheckboxComponent = props => {
         uncheckedCheckBoxColor={props.tintColor}
         disabled={props.disabled}
       />
-      <Text
-        style={[
-          {
-            ...constants.Fonts.HeeboMedium,
-            fontSize: Scale.moderateScale(14),
-            color: constants.Colors.Primary,
-          },
-          props.textStyle,
-        ]}>
-        {props.title}
-      </Text>
+      <Text style={[styles.textStyle, props.textStyle]}>{props.title}</Text>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  checkBox: {padding: Scale.moderateScale(5)},
+  textStyle: {
+    ...constants.Fonts.HeeboMedium,
+    fontSize: Scale.moderateScale(14),
+    color: constants.Colors.Primary,
+  },
+});
 CheckboxComponent.propTypes = {
   style: ViewPropTypes.style,
   testID: PropTypes.string,
@@ -52,12 +47,12 @@ CheckboxComponent.propTypes = {
 };
 CheckboxComponent.defaultProps = {
   style: {},
-  testID: '',
-  tintColor: '',
+  testID: "",
+  tintColor: "",
   onClick: () => {},
   isChecked: false,
   disabled: false,
-  title: '',
+  title: "",
   textStyle: {},
 };
 

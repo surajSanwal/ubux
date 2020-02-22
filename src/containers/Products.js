@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
-import {Text, View, FlatList, Alert} from 'react-native';
-import {connect} from 'react-redux';
-import Scale from '../helpers/Scale';
-import ListEmptyComponents from '../components/common/ListEmptyComponents';
-import Card from '../components/common/Card';
-import {act} from 'react-test-renderer';
+import React, {Component} from "react";
+import {Text, View, FlatList, Alert, StyleSheet} from "react-native";
+import {connect} from "react-redux";
+import Scale from "../helpers/Scale";
+import ListEmptyComponents from "../components/common/ListEmptyComponents";
+import Card from "../components/common/Card";
 
 class Products extends Component {
   constructor(props) {
@@ -15,10 +14,10 @@ class Products extends Component {
   }
 
   removeItem = id => {
-    Alert.alert('UBUX', 'Are you sure want to remove product?', [
-      {text: 'No'},
+    Alert.alert("UBUX", "Are you sure want to remove product?", [
+      {text: "No"},
       {
-        text: 'Yes',
+        text: "Yes",
         onPress: () => {
           let data = [...this.state.products];
           let index = data.findIndex(i => i._id === id);
@@ -40,63 +39,24 @@ class Products extends Component {
       <View>
         <FlatList
           data={this.state.products}
-          style={{
-            shadowColor: '#000',
-            shadowOffset: {height: 1, width: 0},
-            shadowOpacity: 0.4,
-            shadowRadius: Scale.moderateScale(5),
-          }}
+          style={style.listStyle}
           ListEmptyComponent={
             <ListEmptyComponents message="Products Not Founds!" />
           }
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           renderItem={({item}) => (
-            <Card
-              style={{
-                borderBottomWidth: 0.5,
-                borderBottomColor: 'grey',
-                marginVertical: Scale.moderateScale(2),
-              }}>
+            <Card style={style.cardStyle}>
               <View onPress={() => this.updateList(item._id)}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                  }}>
-                  <Text
-                    style={{
-                      fontWeight: 'bold',
-                      fontSize: Scale.moderateScale(16),
-                    }}>
-                    {item.name}
-                  </Text>
-                  <Text
-                    style={{
-                      fontWeight: 'bold',
-                      fontSize: Scale.moderateScale(14),
-                      color: '#0000ff',
-                    }}>
-                    ${item.priceCash}
-                  </Text>
+                <View style={style.nameView}>
+                  <Text style={style.name}>{item.name}</Text>
+                  <Text style={style.price}>${item.priceCash}</Text>
                 </View>
-                <Text
-                  style={{
-                    textAlign: 'justify',
-                    fontSize: Scale.moderateScale(13),
-                    marginVertical: Scale.moderateScale(5),
-                  }}>
-                  {item.description}
-                </Text>
+                <Text style={style.description}>{item.description}</Text>
               </View>
               <Text
                 onPress={() => this.removeItem(item._id)}
-                style={{
-                  alignSelf: 'flex-end',
-                  padding: Scale.moderateScale(5),
-                  color: 'red',
-                  fontSize: Scale.moderateScale(14),
-                }}>
+                style={style.removeBtn}>
                 Remove
               </Text>
             </Card>
@@ -104,29 +64,9 @@ class Products extends Component {
           ListFooterComponent={() => {
             if (!this.state.products.length) return null;
             return (
-              <Card
-                style={{
-                  borderBottomWidth: 0.5,
-                  borderBottomColor: 'grey',
-                  marginVertical: Scale.moderateScale(2),
-                  flexDirection: 'row',
-                  justifyContent: 'space-around',
-                }}>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    fontSize: Scale.moderateScale(16),
-                  }}>
-                  Total Price
-                </Text>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    fontSize: Scale.moderateScale(18),
-                    color: '#0000ff',
-                  }}>
-                  $ {this.getCost()}
-                </Text>
+              <Card style={style.footerStyle}>
+                <Text style={style.priceTotal}>Total Price</Text>
+                <Text style={style.totalCost}>$ {this.getCost()}</Text>
               </Card>
             );
           }}
@@ -135,9 +75,62 @@ class Products extends Component {
     );
   }
 }
+const style = StyleSheet.create({
+  listStyle: {
+    shadowColor: "#000",
+    shadowOffset: {height: 1, width: 0},
+    shadowOpacity: 0.4,
+    shadowRadius: Scale.moderateScale(5),
+  },
+  cardStyle: {
+    borderBottomWidth: 0.5,
+    borderBottomColor: "grey",
+    marginVertical: Scale.moderateScale(2),
+  },
+  nameView: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  name: {
+    fontWeight: "bold",
+    fontSize: Scale.moderateScale(16),
+  },
+  price: {
+    fontWeight: "bold",
+    fontSize: Scale.moderateScale(14),
+    color: "#0000ff",
+  },
+  description: {
+    textAlign: "justify",
+    fontSize: Scale.moderateScale(13),
+    marginVertical: Scale.moderateScale(10),
+  },
+  removeBtn: {
+    alignSelf: "flex-end",
+    padding: Scale.moderateScale(5),
+    color: "red",
+    fontSize: Scale.moderateScale(14),
+  },
+  footerStyle: {
+    borderBottomWidth: 0.5,
+    borderBottomColor: "grey",
+    marginVertical: Scale.moderateScale(2),
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  priceTotal: {
+    fontWeight: "bold",
+    fontSize: Scale.moderateScale(16),
+  },
+  totalCost: {
+    fontWeight: "bold",
+    fontSize: Scale.moderateScale(18),
+    color: "#0000ff",
+  },
+});
 const mapDispatchToProps = {};
 
-const mapStateToProps = state => {
+const mapStateToProps = () => {
   return {};
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

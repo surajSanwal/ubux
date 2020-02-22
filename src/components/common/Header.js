@@ -1,16 +1,16 @@
-import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import Scale from '../../helpers/Scale';
-import constants from '../../constants';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import React from "react";
+import {View, Text, StyleSheet} from "react-native";
+import Scale from "../../helpers/Scale";
+import constants from "../../constants";
+import Icon from "react-native-vector-icons/FontAwesome5";
 
 const Header = props => {
   return (
     <View
       style={{
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
         flex: 1,
       }}>
       {props.leftIcon && (

@@ -1,22 +1,18 @@
-import {Navigation} from 'react-native-navigation';
+import {Navigation} from "react-native-navigation";
 
-import Entypo from 'react-native-vector-icons/Entypo';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import constants from '../constants';
-import Scale from '../helpers/Scale';
-const bottomTab = {
-  selectedTextColor: '#f23959',
-  selectedIconColor: '#ee3a61',
-};
+import Entypo from "react-native-vector-icons/Entypo";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import constants from "../constants";
+
 export const root = () => {
   Promise.all([
-    Entypo.getImageSource('home', 20),
-    FontAwesome.getImageSource('search', 20),
-    Ionicons.getImageSource('ios-notifications', 20),
-    MaterialIcons.getImageSource('chat', 20),
-    FontAwesome.getImageSource('chevron-left', 20),
+    Entypo.getImageSource("home", 20),
+    FontAwesome.getImageSource("search", 20),
+    Ionicons.getImageSource("ios-notifications", 20),
+    MaterialIcons.getImageSource("chat", 20),
+    FontAwesome.getImageSource("chevron-left", 20),
   ]).then(icons => {
     Navigation.setRoot({
       root: {
@@ -27,9 +23,9 @@ export const root = () => {
           children: [
             {
               component: {
-                name: 'home',
+                name: "home",
                 passProps: {
-                  text: 'This is tab 1',
+                  text: "This is tab 1",
                 },
                 options: {
                   topBar: {
@@ -39,12 +35,12 @@ export const root = () => {
                     },
                     title: {
                       component: {
-                        name: 'topBar',
-                        alignment: 'center',
+                        name: "topBar",
+                        alignment: "center",
 
                         passProps: {
-                          title: 'Stores',
-                          leftIcon: 'store',
+                          title: "Stores",
+                          leftIcon: "store",
                         },
                       },
                     },

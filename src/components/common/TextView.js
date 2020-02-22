@@ -1,16 +1,16 @@
-import React from 'react';
-import {View, Text, ViewPropTypes} from 'react-native';
-import PropTypes from 'prop-types';
-import constants from '../../constants';
-import {moderateScale} from '../../helpers/Scale';
+import React from "react";
+import {View, Text, ViewPropTypes, StyleSheet} from "react-native";
+import PropTypes from "prop-types";
+import constants from "../../constants";
+import {moderateScale} from "../../helpers/Scale";
 const TextView = props => {
   return (
-    <View style={[{}, props.style]}>
+    <View style={[props.style]}>
       <Text
         numberOfLines={props.numberOfLines || 1}
         style={[
+          styles.textStyle,
           {
-            ...constants.Fonts.HeeboMedium,
             fontSize: moderateScale(props.fontSize || 15),
             color: props.fontColor || constants.Colors.Primary,
           },
@@ -21,6 +21,9 @@ const TextView = props => {
     </View>
   );
 };
+const styles = StyleSheet.create({
+  textStyle: {...constants.Fonts.HeeboMedium},
+});
 TextView.propTypes = {
   style: ViewPropTypes.style,
   children: React.Children,
