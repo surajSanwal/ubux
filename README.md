@@ -4,9 +4,9 @@ _UBUX app using react native for iOS & Android_
 
 ## Installation
 
-**Step 1:** clone my repo & cd into project
+**Step 1:** Clone my repo & cd into project
 
-**Step 2:** install package.json dependency
+**Step 2:** Install package.json dependency
 
 _for installing dependency [yarn](https://yarnpkg.com/lang/en/) is highly recommended _
 
@@ -40,7 +40,9 @@ react-native run-ios
 
 Using Xcode
 
+```
 Click on Run Button from menu
+```
 
 That's all
 
