@@ -1,359 +1,151 @@
 import React, {Component} from 'react';
-import {View, FlatList, Image, ScrollView, Text} from 'react-native';
-import constants from '../constants';
+import {FlatList, View, Text, TouchableOpacity} from 'react-native';
 import Scale from '../helpers/Scale';
 import Card from '../components/common/Card';
-import TextView from '../components/common/TextView';
-import Entypo from 'react-native-vector-icons/Entypo';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import TextInput from '../components/common/TextInput';
-import Button from '../components/common/Button';
-import moment from 'moment';
-import DropdownView from '../components/common/DropdownView';
-import Checkbox from '../components/common/Checkbox';
-import {RFValue} from 'react-native-responsive-fontsize';
-export default class Home extends Component {
+import {connect} from 'react-redux';
+import {getAllStores, searchStores} from '../actions';
+import ListEmptyComponents from '../components/common/ListEmptyComponents';
+import {Navigation} from 'react-native-navigation';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import constants from '../constants';
+
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       keyword: '',
-      budget: 0,
-      message: '',
-      checkbox: false,
+      filter: false,
     };
   }
+  componentDidMount() {
+    this.props.getAllStores();
+  }
+
+  navigate = store => {
+    Promise.all([FontAwesome.getImageSource('chevron-left', 20)]).then(
+      icons => {
+        Navigation.push(this.props.componentId, {
+          component: {
+            name: 'explore',
+            passProps: {
+              store,
+            },
+            options: {
+              topBar: {
+                backButton: {
+                  icon: icons[0],
+                  color: constants.Colors.Black,
+                },
+                title: {
+                  component: {
+                    name: 'topBar',
+                    alignment: 'center',
+
+                    passProps: {
+                      title: store.tradingName,
+                      leftIcon: 'store',
+                    },
+                  },
+                },
+                rightButtons: [
+                  {
+                    id: 'completeSelection',
+                    text: 'Done',
+                    color: '#0000ff',
+                    fontWeight: 'bold',
+                  },
+                ],
+              },
+            },
+          },
+        });
+      },
+    );
+  };
+
+  search = keyword => {
+    this.setState({keyword}, () => {
+      if (keyword.length > 2) this.props.searchStores(keyword);
+      else this.props.getAllStores();
+    });
+  };
+
+  getData = () => {
+    return this.state.filter
+      ? this.props.stores.filter(item => item.status === 'verified')
+      : this.props.stores;
+  };
+
   render() {
+    let {filter} = this.state;
     return (
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        keyboardDismissMode="interactive"
-        keyboardShouldPersistTaps="handled"
-        style={{
-          padding: RFValue(15),
-          backgroundColor: constants.Colors.Background,
-          flex: 1,
-        }}>
-        <Card style={{}}>
-          <View style={{}}>
-            <TextView value="Location" fontSize={18} />
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                paddingHorizontal: RFValue(2),
-              }}>
-              <Entypo
-                name="location-pin"
-                size={Scale.moderateScale(20)}
-                color={constants.Colors.Primary}
-              />
-              <TextView
-                value="No. 72, Third Cross Street, Ayanavaram, Chennai - 600023 T.."
-                fontSize={12}
-              />
-            </View>
-            <View
-              style={{
-                height: Scale.moderateScale(30),
-                top: Scale.moderateScale(10),
-                width: '90%',
-                alignSelf: 'center',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              <TextView value="Radius" fontSize={18} />
-              <View style={{width: '60%'}} />
-              <TextView value="5 km" fontSize={18} />
-              <View
-                style={{
-                  height: Scale.moderateScale(20),
-                  width: '5%',
-                  alignSelf: 'center',
-                  alignItems: 'center',
-                }}>
-                <Entypo
-                  name="triangle-down"
-                  size={Scale.moderateScale(20)}
-                  color={constants.Colors.Dark}
-                />
-              </View>
-            </View>
-          </View>
-        </Card>
-        <Card style={{marginVertical: RFValue(15)}}>
-          <View>
-            <View
-              style={{
-                // height: Scale.moderateScale(30),
-                width: '100%',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              <TextView value={'I need a..'} fontSize={18} />
-              <Entypo
-                name="lab-flask"
-                size={Scale.moderateScale(20)}
-                color={constants.Colors.Dark}
-              />
-            </View>
-            <TextInput
-              icon="search"
-              placeholder={'Search Profession / Keyword'}
-              example={
-                'Astrologer, Dentist, Lawyer, Mechanic, Plumber, Tailor, Tarot Reader etc.'
-              }
-              value={this.state.keyword}
-              onChangeText={keyword => this.setState({keyword})}
-              onClear={() => this.setState({keyword: ''})}
-            />
-          </View>
-          <View style={{paddingTop: RFValue(15)}}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'center',
-              }}>
-              <TextView
-                fontSize={14}
-                style={{}}
-                value={'20 Android Developers available in 5 km..'}
-              />
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-              <FlatList
-                style={{maxWidth: '75%'}}
-                keyExtractor={() => Math.random().toString()}
-                data={new Array(20)}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                showsVerticalScrollIndicator={false}
-                renderItem={({item, index}) => (
-                  <View
-                    key={index}
-                    style={{
-                      height: Scale.moderateScale(40),
-                      width: Scale.moderateScale(40),
-                      justifyContent: 'center',
-                    }}>
-                    <Image
-                      style={{
-                        height: Scale.moderateScale(38),
-                        width: Scale.moderateScale(38),
-                      }}
-                      resizeMethod="resize"
-                      source={require('../assets/images/lady.png')}
-                    />
-                  </View>
-                )}
-              />
-              <Button
-                style={{
-                  width: Scale.moderateScale(80),
-                  marginLeft: Scale.moderateScale(15),
-                }}
-                title={'View All'}
-              />
-            </View>
-          </View>
-        </Card>
-        <Card style={{marginBottom: RFValue(15)}}>
-          <View>
-            <TextView value="When?" fontSize={18} />
-            <View
-              style={{
-                height: Scale.moderateScale(30),
-                width: '75%',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
-              <TextView value="Now.." fontSize={13} />
-              <TextView
-                value={moment().format('MMM DD, HH:MM A')}
-                fontSize={13}
-              />
-              <TextView value=" " fontSize={13} />
-              <TextView value="Oct 5, 11:30 P.M." fontSize={13} />
-            </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-              <Button
-                style={{
-                  width: Scale.moderateScale(120),
-                }}
-                title={'Now'}
-                icon={'clock-o'}
-              />
-              <Button
-                style={{
-                  width: Scale.moderateScale(170),
-                }}
-                title={'Set date & Time'}
-                icon={'clock-o'}
-              />
-            </View>
-          </View>
-        </Card>
-        <Card style={{marginBottom: RFValue(15)}}>
-          <TextView value="What's your budget?" fontSize={18} />
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              paddingTop: RFValue(14),
-            }}>
-            <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-              }}>
-              <TextInput
-                style={{
-                  borderBottomWidth: Scale.moderateScale(1),
-                  borderLeftWidth: Scale.moderateScale(1),
-                  borderColor: '#e5e5e5',
-                  borderRadius: Scale.moderateScale(5),
-                }}
-                placeholder={'Enter a budget'}
-                value={this.state.budget}
-                onChangeText={budget => this.setState({budget})}
-                onClear={() => this.setState({keyword: ''})}
-              />
-              <View
-                style={{
-                  borderWidth: Scale.moderateScale(2),
-                  borderColor: '#e5e5e5',
-                  borderTopRightRadius: Scale.moderateScale(5),
-                  borderBottomRightRadius: Scale.moderateScale(5),
-                }}>
-                <DropdownView
-                  label="INR"
-                  data={[{key: 'IN', value: 'INR'}]}
-                  style={{left: 3, alignSelf: 'center', width: 50, top: -12}}
-                />
-              </View>
-            </View>
-            <Button
-              title={'No Idea!'}
-              textStyle={{color: constants.Colors.White}}
-              style={{
-                backgroundColor: constants.Colors.Primary,
-                width: Scale.moderateScale(100),
-              }}
-            />
-          </View>
-        </Card>
-        <Card style={{marginBottom: RFValue(15)}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <TextView value="Briefly explain requirement" fontSize={18} />
-            <FontAwesome
-              name="microphone"
-              size={Scale.moderateScale(20)}
-              color={constants.Colors.Primary}
-            />
-          </View>
-          <TextInput
-            placeholder={'Enter a message'}
-            multiline
-            value={this.state.message}
-            onChangeText={budget => this.setState({budget})}
-            onClear={() => this.setState({message: ''})}
-          />
-        </Card>
-        <Card style={{marginBottom: RFValue(15)}}>
-          <TextView value="How many buddies to contact?" fontSize={18} />
-          <FlatList
-            style={{
-              top: 10,
-            }}
-            contentContainerStyle={{}}
-            scrollEnabled={false}
-            horizontal
-            data={[
-              {id: 0, value: '0-12', cost: 'free'},
-              {id: 1, value: '12-20', cost: '$50'},
-              {id: 2, value: '20-30', cost: '$1'},
-            ]}
-            renderItem={({item}) => {
-              return (
-                <View style={{marginHorizontal: RFValue(3)}}>
-                  <Button
-                    title={item.value}
-                    style={{
-                      width: Scale.moderateScale(100),
-                      backgroundColor:
-                        item.id === 0 ? constants.Colors.Primary : 'white',
-                    }}
-                    textStyle={{
-                      color: item.id === 0 ? 'white' : constants.Colors.Primary,
-                    }}
-                  />
-                  <View
-                    style={{
-                      position: 'absolute',
-                      right: Scale.moderateScale(10),
-                    }}>
-                    <Text
-                      style={{
-                        ...constants.Fonts.HeeboRegular,
-                        fontSize: Scale.moderateScale(10),
-                        color:
-                          item.id === 0 ? 'white' : constants.Colors.Primary,
-                      }}>
-                      {item.cost}
-                    </Text>
-                  </View>
-                </View>
-              );
-            }}
-          />
-          <Button
-            style={{
-              margin: Scale.moderateScale(20),
-              marginHorizontal: Scale.moderateScale(80),
-            }}
-            title="Choose Buddies"
-            icon={'hand-o-up'}
-          />
-        </Card>
-        <Checkbox
-          title={'Share Mobile Number with Buddies'}
-          isChecked={this.state.checkbox}
-          onClick={() => this.setState({checkbox: !this.state.checkbox})}
-          tintColor={constants.Colors.Primary}
-        />
-        <TextView
-          value="Note:All contacted buddies may not respond to your post"
-          fontSize={12}
-          textStyle={{alignSelf: 'center', color: constants.Colors.Dark}}
-        />
-        <Button
-          title={'Post'}
+      <>
+        <View
           style={{
-            backgroundColor: constants.Colors.Primary,
-            borderRadius: 10,
-            width: '100%',
-            alignSelf: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            padding: Scale.moderateScale(5),
+          }}>
+          <View style={{flex: 1, paddingHorizontal: Scale.moderateScale(10)}}>
+            <TextInput
+              placeholder="Search Store"
+              icon="search"
+              onChangeText={this.search}
+            />
+          </View>
+
+          <FontAwesome
+            name="filter"
+            size={Scale.moderateScale(20)}
+            color={filter ? '#0000ff' : 'gray'}
+            onPress={() => this.setState({filter: !filter})}
+          />
+        </View>
+        <FlatList
+          refreshing={this.props.loading}
+          onRefresh={() => this.props.getAllStores()}
+          data={this.getData()}
+          style={{
+            shadowColor: '#000',
+            shadowOffset: {height: 1, width: 0},
+            shadowOpacity: 0.4,
+            shadowRadius: Scale.moderateScale(5),
           }}
-          textStyle={{
-            color: constants.Colors.White,
-            fontSize: Scale.moderateScale(22),
-            fontWeight: 'bold',
+          ListEmptyComponent={
+            <ListEmptyComponents message="No Stores Founds!" />
+          }
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+          renderItem={({item}) => {
+            return (
+              <Card
+                style={{
+                  borderBottomWidth: 0.5,
+                  borderBottomColor: 'grey',
+                  marginVertical: Scale.moderateScale(2),
+                }}>
+                <TouchableOpacity onPress={() => this.navigate(item)}>
+                  <Text>{item.tradingName}</Text>
+                </TouchableOpacity>
+              </Card>
+            );
           }}
         />
-        <View style={{height: 20, width: '100%'}}></View>
-      </ScrollView>
+      </>
     );
   }
 }
+const mapDispatchToProps = {
+  getAllStores,
+  searchStores,
+};
+
+const mapStateToProps = state => {
+  return {
+    stores: state.store && state.store.stores,
+    loading: state.store && state.store.loading,
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

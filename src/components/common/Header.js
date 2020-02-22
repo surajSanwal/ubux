@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Scale from '../../helpers/Scale';
 import constants from '../../constants';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -11,20 +11,21 @@ const Header = props => {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        flex: 1,
       }}>
       {props.leftIcon && (
         <Icon
           name={props.leftIcon}
           style={styles.icon}
-          size={props.iconSize || 18}
-          color={props.color || constants.Colors.Primary}
+          size={props.iconSize || 12}
+          color={props.color || constants.Colors.Black}
         />
       )}
       <Text
         style={{
-          fontSize: Scale.moderateScale(20),
+          fontSize: Scale.moderateScale(17),
           ...constants.Fonts.LeagueSpartanBold,
-          color: constants.Colors.Primary,
+          color: constants.Colors.Black,
         }}>
         {props.title}
       </Text>
@@ -33,7 +34,7 @@ const Header = props => {
           name={props.rightIcon}
           style={styles.icon}
           size={props.iconSize || 18}
-          color={props.color || constants.Colors.Primary}
+          color={props.color || constants.Colors.Black}
         />
       )}
     </View>
@@ -42,7 +43,7 @@ const Header = props => {
 const styles = StyleSheet.create({
   container: {},
   icon: {
-    marginHorizontal: Scale.moderateScale(5),
+    marginHorizontal: Scale.moderateScale(10),
   },
 });
 export default Header;

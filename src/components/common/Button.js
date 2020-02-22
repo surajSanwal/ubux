@@ -12,8 +12,6 @@ const Button = props => {
       style={[
         {
           borderWidth: Scale.moderateScale(2),
-          // borderTopWidth: Scale.moderateScale(0),
-          // borderBottomWidth: Scale.moderateScale(2),
           borderColor: '#e5e5e5',
           padding: Scale.moderateScale(10),
           borderRadius: Scale.moderateScale(5),

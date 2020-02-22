@@ -35,15 +35,16 @@ export const root = () => {
                   topBar: {
                     backButton: {
                       icon: icons[4],
-                      color: constants.Colors.Primary,
+                      color: constants.Colors.Black,
                     },
                     title: {
                       component: {
                         name: 'topBar',
                         alignment: 'center',
+
                         passProps: {
-                          title: 'Professionals',
-                          leftIcon: 'user-alt',
+                          title: 'Stores',
+                          leftIcon: 'store',
                         },
                       },
                     },

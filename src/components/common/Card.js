@@ -22,6 +22,5 @@ const Card = props => {
 
 Card.propTypes = {
   style: ViewPropTypes.style,
-  children: React.Children,
 };
 export default Card;

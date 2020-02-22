@@ -43,7 +43,7 @@ const TextInputComponent = props => {
             style={[
               {
                 color: constants.Colors.Primary,
-                fontSize: Scale.moderateScale(16),
+                fontSize: Scale.moderateScale(12),
                 ...constants.Fonts.HeeboMedium,
               },
               props.inputStyle,

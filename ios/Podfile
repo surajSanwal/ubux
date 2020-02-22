@@ -43,4 +43,8 @@ target 'demo_sri' do
 
 
   use_native_modules!
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
+  pod 'react-native-netinfo', :path => '../node_modules/@react-native-community/netinfo'
+
 end
