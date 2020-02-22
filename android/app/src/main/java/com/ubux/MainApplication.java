@@ -1,4 +1,4 @@
-package com.demo_sri;
+package com.ubux;
 
 
 import android.app.Application;

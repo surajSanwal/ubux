@@ -15,7 +15,7 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1EAD26B1BA4000AE6BD405B6 /* libPods-demo_sri.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609A8FA398A55E6647D772BE /* libPods-demo_sri.a */; };
+		1EAD26B1BA4000AE6BD405B6 /* libPods-ubux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609A8FA398A55E6647D772BE /* libPods-ubux.a */; };
 		21DFE824ABE6476B989FC592 /* Heebo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DB301C9D1234594857A7434 /* Heebo-ExtraBold.ttf */; };
 		2E572563F77F460BA31D082F /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 809A936747B144AA87314CCE /* Entypo.ttf */; };
 		540BFC603C504B29BB6FC502 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB5E94540C9E46A69A7FE8A9 /* SimpleLineIcons.ttf */; };
@@ -41,52 +41,52 @@
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* demo_sriTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demo_sriTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* ubuxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ubuxTests.m; sourceTree = "<group>"; };
 		031A756C818C4BFF9885C3A6 /* Heebo-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Bold.ttf"; path = "../src/assets/Fonts/Heebo-Bold.ttf"; sourceTree = "<group>"; };
-		092A5C101538FABD8C717F4E /* Pods-demo_sri-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo_sri-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-demo_sri-tvOS/Pods-demo_sri-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* demo_sri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo_sri.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = demo_sri/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = demo_sri/AppDelegate.m; sourceTree = "<group>"; };
+		092A5C101538FABD8C717F4E /* Pods-ubux-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ubux-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-ubux-tvOS/Pods-ubux-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* ubux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ubux.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ubux/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ubux/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = demo_sri/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = demo_sri/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = demo_sri/main.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ubux/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ubux/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ubux/main.m; sourceTree = "<group>"; };
 		1671AB8F6F2F423890866325 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		1C0F0A9772165B36CBAFD5B1 /* Pods-demo_sri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo_sri.release.xcconfig"; path = "Target Support Files/Pods-demo_sri/Pods-demo_sri.release.xcconfig"; sourceTree = "<group>"; };
+		1C0F0A9772165B36CBAFD5B1 /* Pods-ubux.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ubux.release.xcconfig"; path = "Target Support Files/Pods-ubux/Pods-ubux.release.xcconfig"; sourceTree = "<group>"; };
 		1EE084FFEF0C44A6BF677BCC /* Heebo-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Medium.ttf"; path = "../src/assets/Fonts/Heebo-Medium.ttf"; sourceTree = "<group>"; };
 		1FB554D5036D44688DDD0AC9 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		27A07C3EB15B4CFC94D6A343 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		304E683716C34ADBAE61D786 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		362726ECF3FB22A74D67E7B7 /* libPods-demo_sri-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo_sri-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C868328F27763501068CE89 /* Pods-demo_sriTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo_sriTests.release.xcconfig"; path = "Target Support Files/Pods-demo_sriTests/Pods-demo_sriTests.release.xcconfig"; sourceTree = "<group>"; };
+		362726ECF3FB22A74D67E7B7 /* libPods-ubux-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ubux-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C868328F27763501068CE89 /* Pods-ubuxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ubuxTests.release.xcconfig"; path = "Target Support Files/Pods-ubuxTests/Pods-ubuxTests.release.xcconfig"; sourceTree = "<group>"; };
 		43D08CF0D6C341C9946D9496 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		4796366303214ECEA649BAFB /* LeagueSpartan-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueSpartan-Bold.otf"; path = "../src/assets/Fonts/LeagueSpartan-Bold.otf"; sourceTree = "<group>"; };
-		4AB33DD32F0685A7D420AF79 /* libPods-demo_sri-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo_sri-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AB33DD32F0685A7D420AF79 /* libPods-ubux-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ubux-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB301C9D1234594857A7434 /* Heebo-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-ExtraBold.ttf"; path = "../src/assets/Fonts/Heebo-ExtraBold.ttf"; sourceTree = "<group>"; };
 		56EDDE262B3740E391D8D9FF /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		57A1B39C8E1A4265920B7A1F /* Heebo-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Light.ttf"; path = "../src/assets/Fonts/Heebo-Light.ttf"; sourceTree = "<group>"; };
 		5CB7DE00EE204E7C9DD221F8 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		5D568B29505742BCBAB80B52 /* Heebo-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Thin.ttf"; path = "../src/assets/Fonts/Heebo-Thin.ttf"; sourceTree = "<group>"; };
-		609A8FA398A55E6647D772BE /* libPods-demo_sri.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo_sri.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DF849F1B325F91C687FC5C6 /* Pods-demo_sri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo_sri.debug.xcconfig"; path = "Target Support Files/Pods-demo_sri/Pods-demo_sri.debug.xcconfig"; sourceTree = "<group>"; };
+		609A8FA398A55E6647D772BE /* libPods-ubux.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ubux.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DF849F1B325F91C687FC5C6 /* Pods-ubux.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ubux.debug.xcconfig"; path = "Target Support Files/Pods-ubux/Pods-ubux.debug.xcconfig"; sourceTree = "<group>"; };
 		7739575A11B449289B0DF6F8 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		7C3937BEB21146229D3EFC74 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		809A936747B144AA87314CCE /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		83CE5994236E43E083BD85E9 /* Heebo-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Black.ttf"; path = "../src/assets/Fonts/Heebo-Black.ttf"; sourceTree = "<group>"; };
-		8466CE929F1727DC48A5700A /* Pods-demo_sri-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo_sri-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-demo_sri-tvOSTests/Pods-demo_sri-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8AF7DDEF7448447123BB210C /* Pods-demo_sri-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo_sri-tvOS.release.xcconfig"; path = "Target Support Files/Pods-demo_sri-tvOS/Pods-demo_sri-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		8466CE929F1727DC48A5700A /* Pods-ubux-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ubux-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ubux-tvOSTests/Pods-ubux-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8AF7DDEF7448447123BB210C /* Pods-ubux-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ubux-tvOS.release.xcconfig"; path = "Target Support Files/Pods-ubux-tvOS/Pods-ubux-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		9787655E268C4052ACA0E8A9 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		9F20B79C47334AB6900673C2 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		A63611EE02E30AC41D5B7A61 /* Pods-demo_sri-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo_sri-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-demo_sri-tvOSTests/Pods-demo_sri-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		A63611EE02E30AC41D5B7A61 /* Pods-ubux-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ubux-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ubux-tvOSTests/Pods-ubux-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB5E94540C9E46A69A7FE8A9 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		BDBC9C3B1D3D4F20862E39A6 /* Heebo-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Heebo-Regular.ttf"; path = "../src/assets/Fonts/Heebo-Regular.ttf"; sourceTree = "<group>"; };
 		C5964CDC312449B49ECD7B3E /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		C7B0CF09494040D3A8B94074 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		E881E4B92A3F5EE4510838E0 /* Pods-demo_sriTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo_sriTests.debug.xcconfig"; path = "Target Support Files/Pods-demo_sriTests/Pods-demo_sriTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E881E4B92A3F5EE4510838E0 /* Pods-ubuxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ubuxTests.debug.xcconfig"; path = "Target Support Files/Pods-ubuxTests/Pods-ubuxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F202179DB4FA491A80818C62 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		F73AD63A293DCCCA831A32EA /* libPods-demo_sriTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo_sriTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F73AD63A293DCCCA831A32EA /* libPods-ubuxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ubuxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,20 +94,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EAD26B1BA4000AE6BD405B6 /* libPods-demo_sri.a in Frameworks */,
+				1EAD26B1BA4000AE6BD405B6 /* libPods-ubux.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* demo_sriTests */ = {
+		00E356EF1AD99517003FC87E /* ubuxTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* demo_sriTests.m */,
+				00E356F21AD99517003FC87E /* ubuxTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = demo_sriTests;
+			path = ubuxTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -118,7 +118,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* demo_sri */ = {
+		13B07FAE1A68108700A75B9A /* ubux */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -129,7 +129,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = demo_sri;
+			name = ubux;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -137,10 +137,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				609A8FA398A55E6647D772BE /* libPods-demo_sri.a */,
-				4AB33DD32F0685A7D420AF79 /* libPods-demo_sri-tvOS.a */,
-				362726ECF3FB22A74D67E7B7 /* libPods-demo_sri-tvOSTests.a */,
-				F73AD63A293DCCCA831A32EA /* libPods-demo_sriTests.a */,
+				609A8FA398A55E6647D772BE /* libPods-ubux.a */,
+				4AB33DD32F0685A7D420AF79 /* libPods-ubux-tvOS.a */,
+				362726ECF3FB22A74D67E7B7 /* libPods-ubux-tvOSTests.a */,
+				F73AD63A293DCCCA831A32EA /* libPods-ubuxTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,14 +148,14 @@
 		35CB6F6AFEB2E2959F8817DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6DF849F1B325F91C687FC5C6 /* Pods-demo_sri.debug.xcconfig */,
-				1C0F0A9772165B36CBAFD5B1 /* Pods-demo_sri.release.xcconfig */,
-				092A5C101538FABD8C717F4E /* Pods-demo_sri-tvOS.debug.xcconfig */,
-				8AF7DDEF7448447123BB210C /* Pods-demo_sri-tvOS.release.xcconfig */,
-				8466CE929F1727DC48A5700A /* Pods-demo_sri-tvOSTests.debug.xcconfig */,
-				A63611EE02E30AC41D5B7A61 /* Pods-demo_sri-tvOSTests.release.xcconfig */,
-				E881E4B92A3F5EE4510838E0 /* Pods-demo_sriTests.debug.xcconfig */,
-				3C868328F27763501068CE89 /* Pods-demo_sriTests.release.xcconfig */,
+				6DF849F1B325F91C687FC5C6 /* Pods-ubux.debug.xcconfig */,
+				1C0F0A9772165B36CBAFD5B1 /* Pods-ubux.release.xcconfig */,
+				092A5C101538FABD8C717F4E /* Pods-ubux-tvOS.debug.xcconfig */,
+				8AF7DDEF7448447123BB210C /* Pods-ubux-tvOS.release.xcconfig */,
+				8466CE929F1727DC48A5700A /* Pods-ubux-tvOSTests.debug.xcconfig */,
+				A63611EE02E30AC41D5B7A61 /* Pods-ubux-tvOSTests.release.xcconfig */,
+				E881E4B92A3F5EE4510838E0 /* Pods-ubuxTests.debug.xcconfig */,
+				3C868328F27763501068CE89 /* Pods-ubuxTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* demo_sri */,
+				13B07FAE1A68108700A75B9A /* ubux */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* demo_sriTests */,
+				00E356EF1AD99517003FC87E /* ubuxTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				35CB6F6AFEB2E2959F8817DB /* Pods */,
@@ -217,7 +217,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* demo_sri.app */,
+				13B07F961A680F5B00A75B9A /* ubux.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,9 +225,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* demo_sri */ = {
+		13B07F861A680F5B00A75B9A /* ubux */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "demo_sri" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ubux" */;
 			buildPhases = (
 				8F9891365FEC19EB3F6BDB16 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -241,9 +241,9 @@
 			);
 			dependencies = (
 			);
-			name = demo_sri;
-			productName = demo_sri;
-			productReference = 13B07F961A680F5B00A75B9A /* demo_sri.app */;
+			name = ubux;
+			productName = ubux;
+			productReference = 13B07F961A680F5B00A75B9A /* ubux.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "demo_sri" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ubux" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -269,7 +269,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* demo_sri */,
+				13B07F861A680F5B00A75B9A /* ubux */,
 			);
 		};
 /* End PBXProject section */
@@ -340,7 +340,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-demo_sri-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ubux-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -353,7 +353,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-demo_sri/Pods-demo_sri-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ubux/Pods-ubux-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -392,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demo_sri/Pods-demo_sri-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ubux/Pods-ubux-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -435,7 +435,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = demo_sri;
+			path = ubux;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -443,12 +443,12 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DF849F1B325F91C687FC5C6 /* Pods-demo_sri.debug.xcconfig */;
+			baseConfigurationReference = 6DF849F1B325F91C687FC5C6 /* Pods-ubux.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				INFOPLIST_FILE = demo_sri/Info.plist;
+				INFOPLIST_FILE = ubux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -456,18 +456,18 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = demo_sri;
+				PRODUCT_NAME = ubux;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C0F0A9772165B36CBAFD5B1 /* Pods-demo_sri.release.xcconfig */;
+			baseConfigurationReference = 1C0F0A9772165B36CBAFD5B1 /* Pods-ubux.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = demo_sri/Info.plist;
+				INFOPLIST_FILE = ubux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -475,7 +475,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = demo_sri;
+				PRODUCT_NAME = ubux;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -582,7 +582,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "demo_sri" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ubux" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -591,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "demo_sri" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ubux" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

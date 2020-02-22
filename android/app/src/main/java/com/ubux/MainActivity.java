@@ -1,4 +1,4 @@
-package com.demo_sri;
+package com.ubux;
 
 import com.reactnativenavigation.NavigationActivity;
 
