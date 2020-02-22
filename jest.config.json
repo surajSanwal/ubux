@@ -1,0 +1,14 @@
+{
+  "preset": "react-native",
+  "cacheDirectory": "./cache",
+  "coveragePathIgnorePatterns": ["./app/utils/vendor"],
+  "coverageThreshold": {
+    "global": {
+      "statements": 80
+    }
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(.*async-storage.*)/)",
+    "node_modules/(?!(.*netinfo.*)/)"
+  ]
+}

@@ -49,9 +49,6 @@
     "prettier": "1.19.1",
     "react-test-renderer": "16.9.0"
   },
-  "jest": {
-    "preset": "react-native"
-  },
   "lint-staged": {
     "*.{js,css,json}": [
       "prettier --write"
